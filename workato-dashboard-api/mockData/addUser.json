@@ -1,0 +1,8 @@
+{
+    "body": "{\"apiToken\":\"abc-123\",\"displayName\":\"mock user\"}",
+    "requestContext": {
+        "identity": {
+            "cognitoIdentityId": "MOCK-USER-1"
+        }
+    }
+}

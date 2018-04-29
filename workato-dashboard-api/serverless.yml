@@ -32,3 +32,11 @@ functions:
       - http:
           path: hello
           method: get
+  addUser:
+    handler: src/handlers/user/addUser.main
+    events:
+      - http:
+          path: users
+          method: post
+          cors: true
+          authorizer: aws_iam
