@@ -4,7 +4,8 @@
   "description": "A Node.js starter for the Serverless Framework with async/await and unit test support",
   "main": "handler.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start-local-db": "export LOCAL=\"--endpoint-url http://localhost:8000\" && java -Djava.library.path=~/dynamodb/DynamoDBLocal_lib -jar ~/dynamodb/DynamoDBLocal.jar -sharedDb &"
   },
   "author": "",
   "license": "MIT",
