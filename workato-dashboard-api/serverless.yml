@@ -74,3 +74,11 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
+  listRecipes:
+    handler: src/handlers/recipe/listRecipes.main
+    events:
+      - http:
+          path: recipes
+          method: get
+          cors: true
+          authorizer: aws_iam
