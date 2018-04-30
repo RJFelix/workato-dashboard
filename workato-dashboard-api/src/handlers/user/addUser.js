@@ -1,6 +1,3 @@
-import uuid from 'uuid';
-import AWS from 'aws-sdk';
-
 import * as dynamoDb from '../../lib/dynamodb';
 import { success, failure } from '../../lib/response';
 
@@ -23,6 +20,6 @@ export async function main(event, context, callback) {
     } catch(e) {
         console.log('oh no')
         console.log(e);
-        callback(null, failure({ status: false, error: JSON.stringify(e) }));
+        callback(null, failure({ status: false }));
     }
 }

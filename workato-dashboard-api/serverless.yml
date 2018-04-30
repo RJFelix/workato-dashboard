@@ -40,3 +40,27 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+  getUser:
+    handler: src/handlers/user/getUser.main
+    events:
+      - http:
+          path: users/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
+  listUsers:
+    handler: src/handlers/user/listUsers.main
+    events:
+      - http:
+          path: users
+          method: get
+          cors: true
+          authorizer: aws_iam
+  updateUser:
+    handler: src/handlers/user/updateUser.main
+    events:
+      - http:
+          path: users/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam

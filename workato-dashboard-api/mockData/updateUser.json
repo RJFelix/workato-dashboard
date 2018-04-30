@@ -1,0 +1,6 @@
+{
+    "body": "{\"apiToken\":\"xyz-987\"}",
+    "pathParameters": {
+        "id": "MOCK-USER-1"
+    }
+}
