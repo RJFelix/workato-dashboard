@@ -12,7 +12,7 @@ export function updateFrom(params) {
         if(v === undefined)
             return '';
         return `${k} = :${k}`
-    }).join('');
+    }).reduce((str, cur) => str += (cur ? `, ${cur}` : ''));
     if(exprItems.length === 0) {
         throw new Error('No update specified.');
     }
