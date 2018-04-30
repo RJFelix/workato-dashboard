@@ -82,3 +82,11 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
+  updateRecipe:
+    handler: src/handlers/recipe/updateRecipe.main
+    events:
+      - http:
+          path: recipes/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
