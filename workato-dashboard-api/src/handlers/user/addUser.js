@@ -10,6 +10,7 @@ export async function main(event, context, callback) {
             userId: event.requestContext.identity.cognitoIdentityId,
             apiToken: data.apiToken,
             displayName: data.displayName,
+            workatoEmail: data.workatoEmail,
             createdAt: Date.now(),
         }
     }

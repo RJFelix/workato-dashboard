@@ -1,8 +1,8 @@
 {
-    "body": "{\"apiToken\":\"abc-123\",\"displayName\":\"mock user\"}",
+    "body": "{\"apiToken\":\"hee-hee\",\"displayName\":\"mock user 2\",\"workatoEmail\":\"email@example.com\"}",
     "requestContext": {
         "identity": {
-            "cognitoIdentityId": "MOCK-USER-1"
+            "cognitoIdentityId": "MOCK-USER-2"
         }
     }
 }

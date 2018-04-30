@@ -1,5 +1,5 @@
 {
-    "body": "{\"apiToken\":\"xyz-987\"}",
+    "body": "{\"apiToken\":\"xyz-987\",\"workatoEmail\":\"email@example.com\"}",
     "pathParameters": {
         "id": "MOCK-USER-1"
     }
