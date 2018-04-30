@@ -53,3 +53,4 @@ env.yml
 
 # Mock data using private information
 mockData/addRecipe.json
+mockData/getRecipe.json
