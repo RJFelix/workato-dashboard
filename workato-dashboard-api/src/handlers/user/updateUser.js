@@ -3,9 +3,9 @@ import { success, failure } from '../../lib/response';
 
 export async function main(event, context, callback) {
     const data = JSON.parse(event.body);
-    const update = dynamoDb.updateFrom({ apiToken: data.apiToken, displayName: data.displayName });
     let params;
     try {
+        const update = dynamoDb.updateFrom({ apiToken: data.apiToken, displayName: data.displayName });
         params = {
             TableName: 'wd_users',
             Key: {
