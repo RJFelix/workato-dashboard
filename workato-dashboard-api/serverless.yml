@@ -26,12 +26,6 @@ provider:
   #environment: ${file(env.yml):${self:provider.stage}}
 
 functions:
-  hello:
-    handler: handler.hello
-    events:
-      - http:
-          path: hello
-          method: get
   addUser:
     handler: src/handlers/user/addUser.main
     events:
