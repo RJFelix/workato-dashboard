@@ -64,3 +64,11 @@ functions:
           method: put
           cors: true
           authorizer: aws_iam
+  addRecipe:
+    handler: src/handlers/recipe/addRecipe.main
+    events:
+      - http:
+          path: recipes
+          method: post
+          cors: true
+          authorizer: aws_iam

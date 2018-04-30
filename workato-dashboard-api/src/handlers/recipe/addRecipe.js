@@ -14,7 +14,7 @@ export async function main(event, context, callback) {
                 userId: event.requestContext.identity.cognitoIdentityId,
             },
         };
-        const user = await dynamoDb.perform('get', userParams);
+        const result = await dynamoDb.perform('get', userParams);
         if(!result.Item) {
             return callback(null, failure({ status: false, error: 'User not found.' }));
         }
@@ -28,19 +28,21 @@ export async function main(event, context, callback) {
 
     let recipeInfo;
     try {
-        const workatoRes = await fetch(`https//www.workato.com/api/recipes/${data.workatoId}?user_token=${user.apiToken}&user_email=${user.workatoEmail}`);
+        const workatoRes = await fetch(`https://www.workato.com/api/recipes/${data.workatoId}?user_token=${user.apiToken}&user_email=${user.workatoEmail}`);
         recipeInfo = await workatoRes.json();
+        console.log(recipeInfo);
     } catch(e) {
         console.log(e);
         return callback(null, failure({ status: false, error: 'Problem getting recipe info from Workato.' }));
     }
 
     const params = {
-        tableName: 'wd_recipes',
+        TableName: 'wd_recipes',
         Item: {
             userId: event.requestContext.identity.cognitoIdentityId,
             workatoId: data.workatoId,
             workatoName: recipeInfo.name,
+            nickname: data.nickname,
             lastChecked: Date.now(),
             lastStatus: recipeInfo.running,
             monitor: false,

@@ -50,3 +50,6 @@ env.yml
 
 # Jetbrains IDEs
 .idea
+
+# Mock data using private information
+mockData/addRecipe.json
