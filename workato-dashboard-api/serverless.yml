@@ -90,3 +90,11 @@ functions:
           method: put
           cors: true
           authorizer: aws_iam
+  deleteRecipe:
+    handler: src/handlers/recipes/deleteRecipe.main
+    events:
+      - http:
+          path: recipes/{id}
+          method: delete
+          cors: true
+          authorizer: aws_iam
