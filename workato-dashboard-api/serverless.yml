@@ -98,3 +98,7 @@ functions:
           method: delete
           cors: true
           authorizer: aws_iam
+  checkRecipes:
+    handler: src/workers/checkRecipes.main
+    events:
+      - schedule: rate(30 minutes)
