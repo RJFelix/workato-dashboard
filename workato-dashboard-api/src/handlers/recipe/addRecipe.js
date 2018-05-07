@@ -54,6 +54,7 @@ export async function main(event, context, callback) {
             updatedAt: Date.now(),
             recipeId: uuid.v4(),
             apiToken: user.apiToken,
+            workatoEmail: user.workatoEmail,
         }
     };
 
